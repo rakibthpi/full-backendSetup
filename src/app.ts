@@ -1,9 +1,18 @@
-const express = require('express')
-const app = express()
-const port = 3000
+// const express = require('express')
+import express, { Request, Response } from 'express';
+import cors from 'cors';
+const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Hello jfldfjdjfl !')
-})
+// parser
+app.use(express.json());
+app.use(cors());
 
-console.log(process.cwd())
+app.get('/', (req: Request, res: Response) => {
+  const a = 10;
+
+  res.send(a);
+});
+
+console.log(process.cwd());
+
+export default app;
